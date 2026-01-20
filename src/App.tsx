@@ -21,6 +21,13 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <button onClick={async () => {
+          const res = await fetch("http://72.61.119.52/test-backend/message");
+          const data = await res.json();
+          console.log(data);
+        }}>
+          call api
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
